@@ -13,3 +13,6 @@
 [submodule ".vim/bundle/easymotion"]
 	path = .vim/bundle/easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule ".vim/bundle/color-solarized"]
+	path = .vim/bundle/color-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
