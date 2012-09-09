@@ -18,12 +18,12 @@ then
     exit 0
 fi
 
-if [ -d ~/dotfiles_backup ]
+if [ -d ~/.dotfiles_backup ]
 then
     echo "OK: Backup directory already exists."
 else
-    echo "OK: Creating ~/dotfiles_backup directory."
-    mkdir ~/dotfiles_backup
+    echo "OK: Creating ~/.dotfiles_backup directory."
+    mkdir ~/.dotfiles_backup
 fi
 
 for file in `ls -A . | egrep '^\.'` ; 
@@ -31,8 +31,8 @@ do
     if [ -e ~/"$file" ]
     then
         echo "OK: Found $file in user home"
-        mv ~/"$file" ~/dotfiles_backup/
-        echo "OK: Backed up $file in ~/dotfiles_backup"
+        mv ~/"$file" ~/.dotfiles_backup/
+        echo "OK: Backed up $file in ~/.dotfiles_backup"
         ln -s $PWD/"$file" ~/"$file"
         echo "OK: Symlinked $file"
     else
