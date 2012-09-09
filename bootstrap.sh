@@ -3,14 +3,14 @@
 # @todo read this https://github.com/revans/bash-it/blob/master/install.sh
 # and make the install prcess interactive
 
-while true; do
-    read -p "Do you wish to install the dotfiles in your home folder ?" yn
-    case $yn in
-        [Yy]* ) echo "OK: Bootstrapping ..."; break;;
-        [Nn]* ) exit;;
-            * ) echo "Please answer 'yes' or 'no'.";;
-    esac
-done
+#while true; do
+#    read -p "Do you wish to install the dotfiles in your home folder ?" yn
+#    case $yn in
+#        [Yy]* ) echo "OK: Bootstrapping ..."; break;;
+#        [Nn]* ) exit;;
+#            * ) echo "Please answer 'yes' or 'no'.";;
+#    esac
+#done
 
 if [ -e .dotfiles ]
 then
@@ -26,7 +26,7 @@ else
     mkdir ~/.dotfiles_backup
 fi
 
-for file in `ls -A . | egrep '^\.'` ; 
+for file in `ls -A . | egrep -v '^.git$' | egrep '^\.'` ; 
 do
     if [ -e ~/"$file" ]
     then
