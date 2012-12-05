@@ -1,2 +1,4 @@
 .dotfiles
 .netrwhist
+.buildpath      # eclipse
+.settings       # eclipse
