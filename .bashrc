@@ -56,7 +56,6 @@ else
 fi
 unset color_prompt force_color_prompt
 
-source "`dirname ${BASH_SOURCE[0]}`/.bash_colors"
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
@@ -82,6 +81,14 @@ alias sl='sl -lF'
 alias ll='ls -AlhF'
 alias la='ls -A'
 alias l='ls -CF'
+alias .='cd ..'
+alias ..='cd ../..'
+alias ...='cd ../../..'
+alias ....='cd ../../../..'
+alias .....='cd ../../../../..'
+alias .5='cd ../../../../..'
+alias ......='cd ../../../../../..'
+alias .6='cd ../../../../../..'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -96,7 +103,14 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-source "`dirname ${BASH_SOURCE[0]}`/.bash_work_settings"
+if [ -f ~/.bash_colors ]; then
+    . ~/.bash_colors
+fi
+
+if [ -e ~/.bash_work_settings ]; then
+    . ~/.bash_work_settings
+fi
+
 export EDITOR=vim
 
 # enable programmable completion features (you don't need to enable
