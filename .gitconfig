@@ -1,10 +1,13 @@
 [user]
     name = Igor Malyk
     email = malyk.igor@gmail.com
+
 [core]
     editor = vim
+    
 [merge]
     tool = vimdiff
+
 [alias]
 # Good reading on aliases https://git.wiki.kernel.org/index.php/Aliases
     conflicts = "!git ls-files -u | cut -f 2 | sort -u"
