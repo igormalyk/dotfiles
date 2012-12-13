@@ -56,15 +56,16 @@ else
 fi
 unset color_prompt force_color_prompt
 
+
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    #PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    PS1="[${WHITE}\u@\h${WHITE}:\w\a\$(__git_ps1 ' ${GREEN}[%s]${WHITE}')${BRIGHT_CYAN}]${NORMAL}# ${RESET}"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
 esac
+
 
 
 # enable color support of ls and also add handy aliases
@@ -94,6 +95,7 @@ alias .6='cd ../../../../../..'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -104,12 +106,22 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 if [ -f ~/.bash_colors ]; then
-    . ~/.bash_colors
+    source ~/.bash_colors
 fi
 
 if [ -e ~/.bash_work_settings ]; then
     . ~/.bash_work_settings
 fi
+
+__git_ps1 () 
+{ 
+    local b="$(git symbolic-ref HEAD 2>/dev/null)";
+    if [ -n "$b" ]; then
+        printf " [%s]" "${b##refs/heads/}";
+    fi
+}
+
+PS1="[${WHITE}\u@\h:\w\a${GREEN}\$(__git_ps1 '%s')${WHITE}]${NORMAL}# ${RESET}"
 
 export EDITOR=vim
 
