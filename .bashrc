@@ -110,7 +110,7 @@ if [ -f ~/.bash_colors ]; then
 fi
 
 if [ -e ~/.bash_work_settings ]; then
-    . ~/.bash_work_settings
+    source ~/.bash_work_settings
 fi
 
 __git_ps1 () 
