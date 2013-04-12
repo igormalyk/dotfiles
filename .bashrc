@@ -121,7 +121,7 @@ __git_ps1 ()
     fi
 }
 
-PS1="[${WHITE}\u@\h:\w\a${GREEN}\$(__git_ps1 '%s')${WHITE}]${NORMAL}# ${RESET}"
+PS1="[${WHITE}\u@\h:\W\a${GREEN}\$(__git_ps1 '%s')${WHITE}]${NORMAL}# ${RESET}"
 
 export EDITOR=vim
 
