@@ -150,3 +150,13 @@ function prompt {
     export TERM='xterm'
 }
 PROMPT_COMMAND=prompt
+
+# Source node version manager
+if [ -f  /git-misc/nvm/nvm.sh ]; then
+    source /git-misc/nvm/nvm.sh
+fi
+# Bash completion for nvm
+[[ -r $NVM_DIR/bash_completion ]] && source $NVM_DIR/bash_completion
+
+# Choose default node as a current one
+nvm use default &> /dev/null
