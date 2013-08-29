@@ -93,15 +93,15 @@ map to :tabonly<CR>
 " Opens a new tab with the current buffer's path
 map te :tabedit <c-r>=expand("%:p:h")<CR>/
 " Go to the tab #x
-map t1 gt1<CR>
-map t2 gt2<CR>
-map t3 gt3<CR>
-map t4 gt4<CR>
-map t5 gt5<CR>
-map t6 gt6<CR>
-map t7 gt7<CR>
-map t8 gt8<CR>
-map t9 gt9<CR>
+map t1 1gt<CR>
+map t2 2gt<CR>
+map t3 3gt<CR>
+map t4 4gt<CR>
+map t5 5gt<CR>
+map t6 6gt<CR>
+map t7 7gt<CR>
+map t8 8gt<CR>
+map t9 9gt<CR>
 
 " Switching between buffers behavior
 try
