@@ -24,25 +24,25 @@ set syntax=on
 set expandtab    " Use spaces instead of tabs
 set shiftwidth=4 " 1 tab = 4 spaces
 set tabstop=4
-set autoindent   " Auto indentation
-set smartindent
+"set autoindent   " Auto indentation
+"set smartindent
 set wrapscan
 set showcmd      " Display incomplete commands
 set hlsearch     " Search results highlighting
 set incsearch    " Search when typing like in browsers
 set smartcase    " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set cursorline   " Highlight the current line
-set showmatch    " Show matching brackets when cursor is ovre them
+" set showmatch    " Show matching brackets when cursor is ovre them
 
 set complete=.,b,u,] " autocomplete this file,buffers,tags
 set wildmode=list:longest,full
-set scrolloff=2 " two lines indentaton from top and bottom
+set scrolloff=1 " two lines indentaton from top and bottom
 
 " ctags currently don't work. @todo fix this
 " set tags=tags,/home/igorm/.vim/tags/tags
 " set tags=./tags,tags,~/.vim/tags/tags
 " set tags=~/.vim/tags/tags
-set tags=~/.vim/tags/2.9.x_and_zf1
+" set tags=~/.vim/tags/2.9.x_and_zf1
 " set tags=tags,/home/igorm/Dropbox/linux/config/vim/ctags/tags
 
 " The next 4 commands set up persistent undo
