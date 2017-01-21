@@ -1,5 +1,4 @@
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
+export EDITOR=vim
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -16,7 +15,29 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# some more ls aliases
+# Git bash completion
+if [ -f /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]; then
+  source   /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+fi
+
+# Git repo branch prompt
+if [ -f /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh ]; then
+  source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+fi
+
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS="yes"
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+
+export PROMPT_COMMAND='__git_ps1 "\u:\W" "\\\$ " " [%s] "; echo -ne "\033]0;${PWD##*/}\007"'
+
+# NVM
+if [ -f ~/.nvm/nvm.sh ]; then
+  . ~/.nvm/nvm.sh
+fi
+
+# General Aliases
 alias sl='ls'
 alias ll='ls -AlhF'
 alias la='ls -A'
@@ -29,4 +50,18 @@ alias .5='cd ../../../../..'
 alias ......='cd ../../../../../..'
 alias .6='cd ../../../../../..'
 
-export EDITOR=vim
+# Git Aliases
+alias g='git'
+alias gti='git'
+alias gcim='git commit -m'
+alias gciam='git commit -a -m'
+#function_gcim () {
+   #echo "Parameter #1 is $1"
+#}
+
+# Docker aliases
+alias d='docker'
+alias dv='docker volume'
+alias di='docker images'
+
+alias dc="docker-compose"

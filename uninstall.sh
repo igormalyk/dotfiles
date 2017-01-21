@@ -17,11 +17,11 @@ else
     echo "OK: Backup directory exists."
 fi
 
-for file in `find _* -type f | cut -d _ -f 2` ; 
+for file in `find _* -type f | cut -d _ -f 2` ;
 do
     if [ -L ~/."$file" ]
     then
-        echo "OK: Unlinking $file"
+        echo "OK: Unlinking .$file"
         rm -f ~/."$file"
         if [ -e ~/.dotfiles_backup/".$file" ]
         then

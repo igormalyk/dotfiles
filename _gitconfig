@@ -4,14 +4,13 @@
 
 [core]
     editor = vim
-    
+    autocrlf = false
+
 [merge]
     tool = vimdiff
 
 [alias]
-# Good reading on aliases https://git.wiki.kernel.org/index.php/Aliases
     conflicts = "!git ls-files -u | cut -f 2 | sort -u"
-    p4 = git-p4
     co = checkout
     ci = commit
     st = status
@@ -23,13 +22,6 @@
     type = cat-file -t
     dump = cat-file -p
 
-    # create a new branch and come back instead of stashing 
-    # save = !sh -c 'export PREV=$(git symbolic-ref HEAD|cut -d/ -f3-) && git checkout -b "$1" && git commit -am "$1" && git checkout "$PREV"' -"""""")
-    #http://codingkilledthecat.wordpress.com/2012/04/27/git-stash-pop-considered-harmful/
-
-# For future improvement
-# http://www.tutkiun.com/2011/05/what-your-gitconfig-file-contains.html
-# https://github.com/Nas1k/gitconfig/blob/master/.gitconfig
 [color]
     ui = true
     branch = auto

@@ -17,7 +17,7 @@ else
 fi
 
 echo "# Looking home dir for existing dotfiles with the same name"
-for file in `find _* -type f | cut -d _ -f 2` ; 
+for file in `find _* -type f | cut -d _ -f 2` ;
 do
     if [ -e ~/."$file" ]
     then
@@ -35,15 +35,15 @@ done
 echo "# Backed up dotfiles (if any) will be located in ~/.dotfiles_backup"
 
 touch ~/.dotfiles
-echo "#OK: Created a flag file."
+echo "OK: Created a flag file."
 
-if [ -e ~/.bash_profile ]
+if [ -f ~/.bash_profile ]
 then
     echo "OK: Reloading .bash_profile"
     source ~/.bash_profile
 else
     echo "OK: Reloading .bashrc"
-    source ~/.bashrc
+    . ~/.bashrc
 fi
 
 echo "### Setup complete"
