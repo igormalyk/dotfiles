@@ -37,13 +37,13 @@ echo "# Backed up dotfiles (if any) will be located in ~/.dotfiles_backup"
 touch ~/.dotfiles
 echo "OK: Created a flag file."
 
-if [ -f ~/.bash_profile ]
+if [ -e ~/.bash_profile ]
 then
     echo "OK: Reloading .bash_profile"
     source ~/.bash_profile
 else
     echo "OK: Reloading .bashrc"
-    . ~/.bashrc
+    source ~/.bashrc
 fi
 
 echo "### Setup complete"
