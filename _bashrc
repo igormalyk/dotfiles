@@ -59,13 +59,29 @@ alias g='git'
 alias gti='git'
 alias gcim='git commit -m'
 alias gciam='git commit -a -m'
-#function_gcim () {
-   #echo "Parameter #1 is $1"
-#}
 
 # Docker aliases
-alias d='docker'
-alias dv='docker volume'
-alias di='docker images'
-
+alias d="docker"
+alias di="docker images"
 alias dc="docker-compose"
+alias dm="docker-machine"
+alias dv="docker volume"
+alias dcl="docker exec -it `docker ps -l -q` /bin/bash"
+alias dll="docker logs `docker ps -l -q`"
+
+alias dsl="docker stop `docker ps -l -q`"
+alias dsa="docker stop `docker ps -q`"
+
+alias dkl="docker stop \`docker ps -q\`"
+alias dka="docker kill $(docker ps -q)"
+
+alias drmall="docker rm $(docker ps -a -q)"
+
+alias drmiall="docker rmi $(docker images -a -q)"
+alias drminone="docker rmi $(docker images -f 'dangling=true' -q)"
+
+# Node
+alias ni="npm install"
+alias lsn='ps -ef | grep node | grep -v grep'
+alias np='netstat -tln | grep node'
+alias ntop='top -c -p $(pgrep -d',' -f node)'
